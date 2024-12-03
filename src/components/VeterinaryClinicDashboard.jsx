@@ -61,7 +61,7 @@ const VeterinaryClinicDashboard = () => {
     { 
       name: 'Email', 
       icon: <Mail className="w-5 h-5" />, 
-      email: 'contact@legarrot.cm',
+      number: 'contact@legarrot.cm',
       color: 'from-red-500/20 to-red-600/20' 
     }
   ];
