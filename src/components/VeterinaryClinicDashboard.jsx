@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // Ajoutez cet import
 import { ArrowUpRight, Phone, MessageSquare, Mail, MapPin, Stethoscope, Syringe, Scissors, PawPrint, ShoppingCart, Users, HeartPulse, Award } from 'lucide-react';
 
 const VeterinaryClinicDashboard = () => {
@@ -120,10 +121,12 @@ const VeterinaryClinicDashboard = () => {
                   <p className="text-gray-300 mb-6">
                     Offrez à vos animaux les meilleurs soins possibles avec notre équipe de professionnels dévoués.
                   </p>
-                  <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 group">
+                  <link 
+                    to="/reservation"
+                    className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 group">
                     Prendre Rendez-vous
                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </button>
+                  </link>
                 </div>
                 <div className="flex-1 grid grid-cols-2 gap-4">
                   {animalImages.map((image, index) => (
