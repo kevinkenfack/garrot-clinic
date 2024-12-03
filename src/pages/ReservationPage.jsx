@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { 
   ArrowUpRight, 
   MapPin, 
@@ -26,9 +26,6 @@ const ReservationPage = () => {
     '2024-02-16': ['09:00', '11:00', '13:30', '16:00', '18:00'],
     '2024-02-17': ['10:00', '11:30', '14:30', '16:00']
   };
-
-  // Obtenir les dates disponibles
-  const availableDates = useMemo(() => Object.keys(availableHours), []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -194,20 +191,13 @@ const ReservationPage = () => {
                 <label className="block mb-2 text-gray-300">Choisissez une date</label>
                 <input 
                   type="date" 
-                  min={availableDates[0]}
-                  max={availableDates[availableDates.length - 1]}
                   onChange={handleDateChange}
-                  value={formData.selectedDate || ''}
                   className="w-full bg-white/5 p-3 rounded-xl border border-white/10 text-white"
-                  onFocus={(e) => {
-                    e.target.type = 'date';
-                    e.target.showPicker();
-                  }}
                 />
               </div>
 
               {/* Heures Disponibles */}
-              {formData.selectedDate && availableHours[formData.selectedDate] && (
+              {formData.selectedDate && (
                 <div>
                   <div className="flex items-center gap-2 mb-4">
                     <Clock className="w-5 h-5 text-green-500" />
