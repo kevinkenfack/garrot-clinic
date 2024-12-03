@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Ajoutez cet import
+import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight, Phone, MessageSquare, Mail, MapPin, Stethoscope, Syringe, Scissors, PawPrint, ShoppingCart, Users, HeartPulse, Award } from 'lucide-react';
 
 const VeterinaryClinicDashboard = () => {
   const [scrolled, setScrolled] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleAppointmentClick = () => {
+    navigate('/reservation');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -122,8 +128,8 @@ const VeterinaryClinicDashboard = () => {
                     Offrez à vos animaux les meilleurs soins possibles avec notre équipe de professionnels dévoués.
                   </p>
                   <button 
-                    to="/reservation"
                     className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 group">
+                    onClick={handleAppointmentClick} 
                     Prendre Rendez-vous
                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </button>
