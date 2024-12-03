@@ -128,8 +128,9 @@ const VeterinaryClinicDashboard = () => {
                     Offrez à vos animaux les meilleurs soins possibles avec notre équipe de professionnels dévoués.
                   </p>
                   <button 
-                    className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 group">
+                    className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 group"              
                     onClick={handleAppointmentClick} 
+                    >
                     Prendre Rendez-vous
                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </button>
