@@ -192,7 +192,7 @@ const VeterinaryClinicDashboard = () => {
           {contactChannels.map((channel) => (
             <a
               key={channel.name}
-              href={channel.name === 'WhatsApp' ? `https://wa.me/${channel.number.replace(/\s+/g, '')}` : `tel:${channel.number.replace(/\s+/g, '')}`}
+              href={channel.name === 'WhatsApp' ? `https://wa.me/${channel.number.replace(/\s+/g, '')}` : channel.name === 'Email' ? `mailto:${channel.number}` : `tel:${channel.number.replace(/\s+/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 p-4 transition-all duration-300 hover:bg-white/10 hover:border-white/10 hover:-translate-y-0.5"
